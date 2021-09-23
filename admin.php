@@ -35,7 +35,7 @@ include("config.php");
 				<?php
 				if(isset($_POST["submit"]))
 					{
-						if($_POST["user"]=="admin"&&$_POST["pass"]=="admin")
+						if($_POST["user"]=="albin"&&$_POST["pass"]=="123")
 						{
 							 $_SESSION['usertype'] ='admin';
 							 $_SESSION['username']='admin';

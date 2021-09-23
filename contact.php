@@ -70,11 +70,11 @@
                 <p>
                     Blood Bank &amp; <br>Friend Medical Trust, <br>
 					34/44 ,Cherry Street,<br>
-					Nethimedu-627813.<br>
-					Salem Dt.
+					Karnataka-673639.<br>
+					Bangalore Dt.
                 </p>
                 <p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">P</abbr>: 908776655</p>
+                    <abbr title="Phone">P</abbr>: 9745096452</p>
                 <p><i class="fa fa-envelope-o"></i> 
                     <abbr title="Email">E</abbr>: <a href="#" >bloodbankin@gmail.com</a>
                 </p>
