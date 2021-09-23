@@ -76,8 +76,6 @@ include("top_nav.php");
 									<option value="">Select Gender</option>
 									<option value="Male">Male</option>
 									<option value="Female">Female</option>
-									<option value="Thirunangai">Thirunangai</option>
-									<option value="Thirunambi">Thirunambi</option>
 								</select>
 						</div>
 						
@@ -121,7 +119,7 @@ include("top_nav.php");
                           </div>
 						   <div class="form-group">
 								<label class="control-label text-primary">Pincode</label>
-                                <input type="text" required name="PIN" id="PIN" class="form-control" placeholder="Insert Pincode">
+                                <input type="text" required name="PIN" id="PIN" class="form-control" maxlength="6" onkeypress='validate(event)' placeholder="Insert Pincode">
                           </div>
 						  <div class="form-group">
 							<label class="control-label text-primary">Doctor Name</label>
@@ -146,11 +144,11 @@ include("top_nav.php");
 						</div>
 						<div class="form-group">
 							<label class="control-label text-primary">Contact No-1</label>
-							<input type="text" placeholder="Contact Number" maxlength="10" class="form-control input-sm" name="CON1" id="CON1">
+							<input type="text" placeholder="Contact Number" maxlength="10" class="form-control input-sm" onkeypress='validate(event)' name="CON1" id="CON1">
 						</div>
 							<div class="form-group">
 							<label class="control-label text-primary">Contact No-2</label>
-							<input type="text" placeholder="Contact Number" maxlength="10" class="form-control input-sm" name="CON2" id="CON2">
+							<input type="text" placeholder="Contact Number" maxlength="10" class="form-control input-sm" onkeypress='validate(event)' name="CON2" id="CON2">
 						</div>
 						<div class="form-group">
 								<label class="control-label text-primary">Reason For Blood</label>
@@ -158,7 +156,7 @@ include("top_nav.php");
                           </div>
 						  	<div class="form-group">
 							<label class="control-label text-primary" >Upload Photo</label>
-							<input type="file"  onChange="validate(this.value)" name="PIC" id="PIC">
+							<input type="file"  onChange="validatefile(this.value)" name="PIC" id="PIC">
 						  </div>
 						  
 						  
@@ -315,7 +313,7 @@ include("top_nav.php");
 	});
 	
 	
-	function validate(file) {
+	function validatefile(file) {
     var ext = file.split(".");
     ext = ext[ext.length-1].toLowerCase();      
     var arrayExtensions = ["jpg" , "jpeg", "png", "bmp", "gif"];
