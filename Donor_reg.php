@@ -91,7 +91,7 @@ include("top_nav.php");
 							</div>
 							<div class="form-group">
 								<label class="control-label text-primary" for="BODY_WEIGHT">Body Weight</label>
-								<input type="text" required placeholder="Weight In Kgs" value="<?php echo isset($_POST['BODY_WEIGHT']) ? $_POST['BODY_WEIGHT'] : ''; ?>" name="BODY_WEIGHT"
+								<input type="text" onkeypress='validate(event)' required placeholder="Weight In Kgs" value="<?php echo isset($_POST['BODY_WEIGHT']) ? $_POST['BODY_WEIGHT'] : ''; ?>" name="BODY_WEIGHT"
 									id="BODY_WEIGHT" class="form-control input-sm">
 							</div>
 							<div class="form-group">
