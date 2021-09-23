@@ -81,7 +81,7 @@ include("top_nav.php");
             </div>
 			 <div class="col-xs-12 col-sm-12 col-md-6" id="feedback">
 			 <p>
-				Please fill the correct details and search your nearest donor.For more queries contact our admin.
+				Please fill the correct details and search your nearest donor.For more Details contact our admin.
 			 </p>
 			  </div>
 			
