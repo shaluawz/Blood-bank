@@ -270,7 +270,7 @@ include("top_nav.php");
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 				// Check if image file is a actual image or fake image
 				
-				if(file_exists($_FILES['upload']['tmp_name'][0])) {
+				if(file_exists($_FILES['fileToUpload']['tmp_name'])) {
 				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "";
