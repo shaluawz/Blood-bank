@@ -43,7 +43,7 @@
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Phone Number:</label>
-                            <input type="tel" class="form-control" name="phone" required>
+                            <input type="text" class="form-control" onkeypress='validate(event)'maxlength="10" name="phone" required>
                         </div>
                     </div>
                     <div class="control-group form-group">

@@ -53,7 +53,7 @@ include("top_nav.php");
 								<label class="control-label text-primary" for="GENDER">Gender</label>
 								<select id="gen" name="GENDER" required class="form-control input-sm">
 									<option value="">Select Gender</option>
-									<option value="Male">Male</option>
+									<option value="Male" selected>Male</option>
 									<option value="Female">Female</option>
 								</select>
 							</div>
@@ -69,7 +69,7 @@ include("top_nav.php");
 								<label class="control-label text-primary" for="BLOOD">Blood Group</label>
 								<select id="blood" name="BLOOD" required class="form-control input-sm">
 									<option value="">Select Blood</option>
-									<option value="A+">A+</option>
+									<option value="A+" selected>A+</option>
 									<option value="B+">B+</option>
 									<option value="O+">O+</option>
 									<option value="AB+">AB+</option>
@@ -111,7 +111,7 @@ include("top_nav.php");
 									{
 										while($row=$result->fetch_assoc())
 										{
-											echo "<option value='{$row['COUNTRY_ID']}'>{$row['COUNTRY_NAME']}	</option>";
+											echo "<option value='{$row['COUNTRY_ID']}' selected>{$row['COUNTRY_NAME']}	</option>";
 										}
 									}
 								?>
@@ -129,7 +129,7 @@ include("top_nav.php");
 									{
 										while($row=$result->fetch_assoc())
 										{
-											echo "<option value='{$row['STATE_ID']}'>{$row['STATE_NAME']}	</option>";
+											echo "<option value='{$row['STATE_ID']}' selected>{$row['STATE_NAME']}	</option>";
 										}
 									}
 									
@@ -150,7 +150,7 @@ include("top_nav.php");
 									{
 										while($row=$result->fetch_assoc())
 										{
-										echo "<option value='{$row['CITY_ID']}'>{$row['CITY_NAME']}	</option>";
+										echo "<option value='{$row['CITY_ID']}'selected>{$row['CITY_NAME']}	</option>";
 										}
 									}
 									
@@ -269,8 +269,9 @@ include("top_nav.php");
 				$uploadOk = 1;
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 				// Check if image file is a actual image or fake image
-
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+				
+				if(file_exists($_FILES['upload']['tmp_name'][0])) {
+				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "";
         $uploadOk = 1;
@@ -306,6 +307,7 @@ if ($uploadOk == 0) {
      //   echo "Sorry, there was an error uploading your file.";
     }
 }
+				}
 $country="";
 $state="";
 
@@ -346,7 +348,6 @@ $interval = $date1->diff($date2);
 $myage= $interval->y; 
 
 if ($myage >= 16){ 
-
 	$sql="
 	INSERT INTO blood_donor 
 	(NAME, FATHER_NAME, GENDER, DOB, BLOOD, BODY_WEIGHT, EMAIL, ADDRESS, AREA, CITY, PINCODE, STATE, CONTACT_1, CONTACT_2, VOLUNTARY, VOLUNTARY_GROUP,NEW_DONOR, LAST_D_DATE, DONOR_PIC,COUNTRY)
@@ -399,9 +400,6 @@ else{
 			
 			function () {
 				
-			$('body').on('input','#BODY_WEIGHT',function(event){
-				this.value = this.value.replace(/[^0-9]/g, '');
-			});
 				$("#volu").hide();
 				$("#c1").click(function () {
 					if ($("#c1").is(':checked')) {
